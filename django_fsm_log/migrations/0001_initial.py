@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('timestamp', models.DateTimeField(default=django.utils.timezone.now)),
                 ('state', models.CharField(max_length=255, db_index=True)),
                 ('transition', models.CharField(max_length=255)),
-                ('object_id', models.PositiveIntegerField(db_index=True)),
+                ('object_id', UUIDField(db_index=True, default=uuid.uuid4, editable=False)),
                 ('by', models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)),
                 ('content_type', models.ForeignKey(to='contenttypes.ContentType', on_delete=models.CASCADE)),
             ],
