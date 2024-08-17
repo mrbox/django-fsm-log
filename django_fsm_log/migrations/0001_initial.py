@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models, migrations
 import django.utils.timezone
 from django.conf import settings
